@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 464d8a2de2d20bb49968ffa754d42bd6, type: 3}
+  m_Name: so--ODButton_Tint_test
+  m_EditorClassIdentifier: 
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  hoverColor: {r: 1, g: 0, b: 0, a: 1}
+  pressedColor: {r: 0, g: 1, b: 0.10349083, a: 1}
+  untoggledColor: {r: 0, g: 0.1881628, b: 1, a: 1}
+  disabledColor: {r: 0.3764706, g: 0.3764706, b: 0.3764706, a: 1}
+  hover2Color: {r: 0.9, g: 0, b: 0.9, a: 1}
+  pressed2Color: {r: 0, g: 0.6, b: 0.6, a: 1}

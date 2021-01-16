@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff2adb1fe2c673f4fb589f84a903bdd3, type: 3}
+  m_Name: btnSO_NextBack
+  m_EditorClassIdentifier: 
+  memo: "\u623B\u308B\u30DC\u30BF\u30F3"
+  Anim:
+    hasEterAnim: 1
+    animEnterExitSec: 0.3
+    isNoOverride: 0
+    animatorInfo:
+      Life_Hide: {fileID: 7400000, guid: 96916b5850fe1c54bbb08e7b854078cb, type: 2}
+      Life_Enter: {fileID: 7400000, guid: d3f7a05679420c44aba8b6f5c5a7a60f, type: 2}
+      Life_Idle: {fileID: 7400000, guid: 322c5855a9b86d74bb129e861b175816, type: 2}
+      Life_Exit: {fileID: 7400000, guid: f2d5c5bfbf3f5644b8cd1997e513e33a, type: 2}
+      Life_ON_Enable: {fileID: 7400000, guid: 9ba7f025fc1cf3642871175cfae98305, type: 2}
+      Life_OFF_Disable: {fileID: 7400000, guid: 2ceb884d678baf741b9441f4d7714f03,
+        type: 2}
+      Pointer_Reset: {fileID: 0}
+      Pointer_Enter: {fileID: 7400000, guid: a0e5fe5e50022b2408e2a80946f1d295, type: 2}
+      Pointer_Down: {fileID: 7400000, guid: 7331e772f137ab8418c4c95a22056508, type: 2}
+      Pointer_Click: {fileID: 7400000, guid: c8573fba41cab36429f47b563bf97632, type: 2}
+      Pointer_Cancel: {fileID: 7400000, guid: 87a6d4243b96cc440912e59a5e3c9f6d, type: 2}
+      Pointer_LongHold: {fileID: 0}
+      Life_Toggled: {fileID: 0}
+      Life_Untoggled: {fileID: 0}

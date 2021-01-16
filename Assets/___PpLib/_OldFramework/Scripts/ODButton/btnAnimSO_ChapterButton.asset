@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff2adb1fe2c673f4fb589f84a903bdd3, type: 3}
+  m_Name: btnAnimSO_ChapterButton
+  m_EditorClassIdentifier: 
+  memo: "\u30C1\u30E3\u30D7\u30BF\u30FC\u9078\u629E\u7528\u30DC\u30BF\u30F3"
+  Anim:
+    hasEterAnim: 0
+    animEnterExitSec: 0.3
+    isNoOverride: 0
+    animatorInfo:
+      Life_Hide: {fileID: 7400000, guid: 1a089dea1fb3a8b4e9155acbf869d0b6, type: 2}
+      Life_Enter: {fileID: 7400000, guid: 1a089dea1fb3a8b4e9155acbf869d0b6, type: 2}
+      Life_Idle: {fileID: 7400000, guid: 1a089dea1fb3a8b4e9155acbf869d0b6, type: 2}
+      Life_Exit: {fileID: 7400000, guid: 1a089dea1fb3a8b4e9155acbf869d0b6, type: 2}
+      Life_ON_Enable: {fileID: 7400000, guid: 3f90a744cc0cf484b82f59c90bd34fa2, type: 2}
+      Life_OFF_Disable: {fileID: 7400000, guid: c07f88ba0ea5f7145b25ae210b3b1628,
+        type: 2}
+      Pointer_Reset: {fileID: 0}
+      Pointer_Enter: {fileID: 0}
+      Pointer_Down: {fileID: 7400000, guid: 177b3ead00f4bf0428676b71ff257274, type: 2}
+      Pointer_Click: {fileID: 7400000, guid: fbf686d07569dc44b8b576329641bc38, type: 2}
+      Pointer_Cancel: {fileID: 7400000, guid: cd86a27ddf8e7b3449b91d37c0455c51, type: 2}
+      Pointer_LongHold: {fileID: 7400000, guid: 1a089dea1fb3a8b4e9155acbf869d0b6,
+        type: 2}
+      Life_Toggled: {fileID: 7400000, guid: 3ad93c51d8cead24a95168f07d25fb7d, type: 2}
+      Life_Untoggled: {fileID: 7400000, guid: da6c931f1c5e1e44e925af4a292200fe, type: 2}

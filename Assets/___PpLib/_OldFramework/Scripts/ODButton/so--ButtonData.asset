@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c42946605b85e6e4caad3583a47642ee, type: 3}
+  m_Name: so--ButtonData
+  m_EditorClassIdentifier: 
+  Life_Enter: {fileID: 7400000, guid: b9e304e9014a71f4fa2c24cb5ea2319b, type: 2}
+  Life_Exit: {fileID: 7400000, guid: 51bc0e16f5fe3e64e8be73c86c1174a5, type: 2}
+  Life_Hide: {fileID: 7400000, guid: 2c6d412827638c84abd1924f4b20de37, type: 2}
+  Life_Idle: {fileID: 7400000, guid: 0936dd1cf5e2aa64f9dfdaf59a165bb3, type: 2}
+  Life_ON_Enable: {fileID: 7400000, guid: bcc7511aac3f37241b53bbfeffc4785e, type: 2}
+  Life_OFF_Disable: {fileID: 7400000, guid: 9227fe45e87574540ad875f3349c3ae9, type: 2}
+  Pointer_Reset: {fileID: 7400000, guid: 95c4d48997758334aab0495c10141b11, type: 2}
+  Pointer_Enter: {fileID: 7400000, guid: 07f08b79d66a65d4f95c9d800a713b6a, type: 2}
+  Pointer_Down: {fileID: 7400000, guid: bfa40995d0901074ebd47d4e8b457c5d, type: 2}
+  Pointer_Click: {fileID: 7400000, guid: d45842b693e51d34da7d29bd9ba66da3, type: 2}
+  Pointer_Cancel: {fileID: 7400000, guid: 25739908180abaf489b4d02ca94561c7, type: 2}
+  Pointer_LongHold: {fileID: 7400000, guid: 95a100c953c4f7d439b5c74c200f2a7a, type: 2}
+  Life_Toggled: {fileID: 7400000, guid: 30a1a9d69677f234e834c8696e3cc281, type: 2}
+  Life_Untoggled: {fileID: 7400000, guid: 6b12f5fdc7d2c7e448e45d95933c325e, type: 2}

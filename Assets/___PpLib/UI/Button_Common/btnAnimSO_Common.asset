@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff2adb1fe2c673f4fb589f84a903bdd3, type: 3}
+  m_Name: btnAnimSO_Common
+  m_EditorClassIdentifier: 
+  memo: "\u666E\u901A\u306E\u30DC\u30BF\u30F3"
+  Anim:
+    hasEterAnim: 1
+    animEnterExitSec: 0.3
+    isNoOverride: 1
+    animatorInfo:
+      Life_Hide: {fileID: 0}
+      Life_Enter: {fileID: 0}
+      Life_Idle: {fileID: 0}
+      Life_Exit: {fileID: 0}
+      Life_ON_Enable: {fileID: 0}
+      Life_OFF_Disable: {fileID: 0}
+      Pointer_Reset: {fileID: 0}
+      Pointer_Enter: {fileID: 0}
+      Pointer_Down: {fileID: 0}
+      Pointer_Click: {fileID: 0}
+      Pointer_Cancel: {fileID: 0}
+      Pointer_LongHold: {fileID: 0}
+      Life_Toggled: {fileID: 0}
+      Life_Untoggled: {fileID: 0}
