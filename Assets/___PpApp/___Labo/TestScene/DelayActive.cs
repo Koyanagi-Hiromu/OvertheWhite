@@ -19,7 +19,10 @@ namespace PPD
                     o.SetActive(false);
                 }
             }
+        }
 
+        private void Start()
+        {
             DOVirtual.DelayedCall(delaySec, AllActive);
         }
 

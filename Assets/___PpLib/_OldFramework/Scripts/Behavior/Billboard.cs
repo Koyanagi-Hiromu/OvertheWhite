@@ -8,8 +8,10 @@ namespace SR
     public class Billboard : MonoBehaviour
     {
         [SerializeField, Title("完全にカメラの方向を向きます（通常はY軸無視）")] private bool unholdY;
+        public bool findMainCameraEachUpdate;
         // [SerializeField] private bool invalidParentScale;
         private Transform m_CameraTransform;
+        Transform tCamera => findMainCameraEachUpdate ? Camera.main.transform : m_CameraTransform;
         private new Transform transform;
         // private Vector3 defaultLocalScale;
 
@@ -41,13 +43,13 @@ namespace SR
 
             if (unholdY)
             {
-                this.transform.LookAt(m_CameraTransform);
+                this.transform.LookAt(tCamera);
             }
             else
             {
                 this.transform.LookAt(
-                    transform.position + m_CameraTransform.rotation * Vector3.forward,
-                    m_CameraTransform.rotation * Vector3.up
+                    transform.position + tCamera.rotation * Vector3.forward,
+                    tCamera.rotation * Vector3.up
                 );
             }
         }

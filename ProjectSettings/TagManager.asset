@@ -38,7 +38,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Hero
   m_SortingLayers:
   - name: Background
     uniqueID: 376551841
