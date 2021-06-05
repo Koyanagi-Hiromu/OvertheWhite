@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace PPD
 {
-    public class DOCharacterSpeech : PPD_MonoBehaviour, IDOPhaseComponent
+    public class DOCharacterSpeech : DOPhaseComponent
     {
         [TextArea] public string text;
         public Character character;
@@ -14,14 +14,29 @@ namespace PPD
         public float shakeStrength;
         public float shakeDuration;
         public TextMeshPro textMesh => character.speechBabble.textMesh;
-        public void EditorTransition()
+        DOTweenTMPAnimator animator;
+        public override void EditorTransition()
         {
             textMesh.text = text;
             textMesh.color = color;
         }
 
-        private void OnDisable()
+        private void Awake()
         {
+            if (animator == null)
+            {
+                animator = new DOTweenTMPAnimator(textMesh);
+            }
+        }
+
+        public override void OnUnityDisable()
+        {
+            //TODO: 遷移途中で止められていないので止められるようにしてね
+
+            // if (animator != null)
+            // {
+            //     animator.Reset();
+            // }
             character.speechBabble.babbleImage.DOKill();
             character.speechBabble.textMesh.DOKill();
 
@@ -29,8 +44,7 @@ namespace PPD
             character.speechBabble.textMesh.DOColor(Color.clear, 0.2f);
         }
 
-        //TODO: フェイズから呼んであげる。
-        public void OnEnable()
+        public override void OnUnityEnable()
         {
             character.speechBabble.babbleImage.DOKill();
             character.speechBabble.textMesh.DOKill();
@@ -38,10 +52,11 @@ namespace PPD
             character.speechBabble.babbleImage.color = Color.white;
 
             textMesh.text = text;
-            textMesh.color = color;
+            var clearColor = color;
+            clearColor.a = 0;
+            textMesh.color = clearColor;
 
-            textMesh.DOFade(0, 0).Complete();
-            DOTweenTMPAnimator animator = new DOTweenTMPAnimator(textMesh);
+
             if (shakeStrength > 0 && shakeDuration > 0)
             {
                 for (int i = 0; i < animator.textInfo.characterCount; i++)

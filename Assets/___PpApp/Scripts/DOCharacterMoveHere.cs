@@ -2,17 +2,19 @@
 
 namespace PPD
 {
-    public class DOCharacterMoveHere : PPD_MonoBehaviour, IDOPhaseComponent
+    public class DOCharacterMoveHere : DOPhaseComponent
     {
         public Character character;
         public float moveDuration;
 
-        public void EditorTransition()
+        public override void EditorTransition()
         {
             character.transform.position = transform.position;
         }
 
-        public void OnEnable()
+        public override void OnUnityDisable() { }
+
+        public override void OnUnityEnable()
         {
             character.transform.DOMove(transform.position, moveDuration);
         }

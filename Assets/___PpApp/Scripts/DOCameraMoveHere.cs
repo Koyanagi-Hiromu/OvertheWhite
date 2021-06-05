@@ -3,18 +3,20 @@ using DG.Tweening;
 namespace PPD
 {
 
-    public class DOCameraMoveHere : PPD_MonoBehaviour, IDOPhaseComponent
+    public class DOCameraMoveHere : DOPhaseComponent
     {
         public new PD_Camera camera;
         public float moveDuration;
 
-        public void EditorTransition()
+        public override void EditorTransition()
         {
             camera.transform.position = transform.position;
             camera.transform.localRotation = transform.localRotation;
         }
 
-        public void OnEnable()
+        public override void OnUnityDisable() { }
+
+        public override void OnUnityEnable()
         {
             camera.transform.DOMove(transform.position, moveDuration);
             camera.transform.DORotateQuaternion(transform.localRotation, moveDuration);

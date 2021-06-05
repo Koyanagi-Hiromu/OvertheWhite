@@ -6,16 +6,16 @@ using UnityEngine;
 namespace PPD
 {
     [TypeInfoBox("子を全部アクティブにします。\nあらかじめ非アクティブにしておいてください。")]
-    public class DODelayActiveChildren : PPD_MonoBehaviour, IDOPhaseComponent
+    public class DODelayActiveChildren : DOPhaseComponent
     {
         public float delaySec;
-        Transform[] activedTransforms;
+        DOPhaseComponent[] targetDOComponents;
 
-        public void EditorTransition()
+        public override void EditorTransition()
         {
-            foreach (var child in GetComponentsInChildren<IDOPhaseComponent>(includeInactive: true))
+            foreach (var child in GetComponentsInChildren<DOPhaseComponent>())
             {
-                if ((IDOPhaseComponent)this != child)
+                if (this != child)
                 {
                     child.EditorTransition();
                 }
@@ -24,28 +24,29 @@ namespace PPD
 
         private void Awake()
         {
-            activedTransforms = GetComponentsInChildren<Transform>(includeInactive: true);
-            SetAllActive(false);
+            targetDOComponents = GetComponentsInChildren<DOPhaseComponent>();
+            SetAllActive(true, false);
         }
 
-        public void OnEnable()
+        public override void OnUnityEnable()
         {
             DOVirtual.DelayedCall(delaySec, SetAllActive);
         }
 
-        private void OnDisable()
+        public override void OnUnityDisable()
         {
-            SetAllActive(false);
+            SetAllActive(false, false);
         }
 
-        private void SetAllActive() => SetAllActive(true);
-        private void SetAllActive(bool flg)
+        private void SetAllActive() => SetAllActive(false, true);
+        private void SetAllActive(bool ignore, bool active)
         {
-            foreach (var t in activedTransforms)
+            foreach (var child in targetDOComponents)
             {
-                if (t != this.transform)
+                if (this != child)
                 {
-                    t.gameObject.SetActive(flg);
+                    child.ignoreOnEnable = ignore;
+                    child.gameObject.SetActive(active);
                 }
             }
         }
