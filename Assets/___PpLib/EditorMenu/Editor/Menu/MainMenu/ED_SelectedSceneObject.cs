@@ -216,7 +216,7 @@ namespace PPD
 
             if (o.Any(e => e == null))
             {
-                ST_Pop.ED_Error("GameObjectを選択してください");
+                EX_Pop.ED_Error("GameObjectを選択してください");
             }
 
             return o.ToArray();

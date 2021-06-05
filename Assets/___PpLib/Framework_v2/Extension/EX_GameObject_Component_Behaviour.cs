@@ -10,6 +10,40 @@ namespace PPD
     public static class EX_GameObject_Component_Behaviour
     {
         /// <summary>
+        /// 対象のレイヤーを変更します。
+        /// </summary>
+        /// <param name="changeChildren">trueで、それと子を含めてレイヤーを変更します</param>
+        public static void SetLayer(this GameObject o, int layer, bool changeChildren = true)
+        {
+            if (changeChildren)
+                _SetLayer(o.transform, layer);
+            else
+                o.layer = layer;
+        }
+
+        /// <summary>
+        /// 対象のレイヤーを変更します。
+        /// </summary>
+        /// <param name="changeChildren">trueで、それと子を含めてレイヤーを変更します</param>
+        public static void SetLayer<T>(this T o, int layer, bool changeChildren = true)
+        where T : Component
+        {
+            if (changeChildren)
+                _SetLayer(o.transform, layer);
+            else
+                o.gameObject.layer = layer;
+        }
+
+        static void _SetLayer(Transform t, int layer)
+        {
+            t.gameObject.layer = layer;
+            foreach (Transform child in t)
+            {
+                _SetLayer(child, layer);
+            }
+        }
+
+        /// <summary>
         /// gameObjectを削除します。
         /// コンポーネントを削除するのではないことに注意してください。
         /// </summary>

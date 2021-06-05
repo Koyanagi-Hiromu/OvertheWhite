@@ -538,6 +538,31 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7859819999285173496, guid: a8c567f7c0fa47549b36c8ada7c7e75f,
+        type: 3}
+      propertyPath: m_text
+      value: AD Claim
+      objectReference: {fileID: 0}
+    - target: {fileID: 7859819999285173496, guid: a8c567f7c0fa47549b36c8ada7c7e75f,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7859819999285173496, guid: a8c567f7c0fa47549b36c8ada7c7e75f,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 72.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 7859819999285173496, guid: a8c567f7c0fa47549b36c8ada7c7e75f,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7859819999285173496, guid: a8c567f7c0fa47549b36c8ada7c7e75f,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8c567f7c0fa47549b36c8ada7c7e75f, type: 3}
 --- !u!224 &5329195832594011355 stripped

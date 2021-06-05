@@ -98,6 +98,29 @@ namespace PPD
         //     return ret;
         // }
 
+        public static GameObject Inst(this GameObject prefab, Vector3 position, Quaternion rotation, Transform parent = null)
+        {
+            return GameObject.Instantiate(prefab, position, rotation, parent);
+        }
+
+        public static GameObject Inst(this GameObject prefab, Vector3 position, Transform parent = null)
+        {
+            var q = prefab.transform.rotation;
+            var obj = GameObject.Instantiate(prefab, position, Quaternion.identity, parent);
+            obj.transform.localRotation = q;
+            return obj;
+        }
+
+        public static GameObject Inst(this GameObject prefab, Transform parent = null)
+        {
+            var p = prefab.transform.localPosition;
+            var q = prefab.transform.rotation;
+            var obj = GameObject.Instantiate(prefab, Vector3.zero, Quaternion.identity, parent);
+            obj.transform.localPosition = p;
+            obj.transform.localRotation = q;
+            return obj;
+        }
+
         public static T Inst<T>(this GameObject prefab, Component parent, bool worldPositionStays = false)
          where T : Component
         {

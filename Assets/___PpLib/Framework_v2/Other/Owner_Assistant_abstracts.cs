@@ -153,7 +153,7 @@ namespace PPD
 
             if (owner == null)
             {
-                ST_Pop.ED_Error("親が見つかりませんでした。\n親階層か自分と同じ階層に用意してください。");
+                EX_Pop.ED_Error("親が見つかりませんでした。\n親階層か自分と同じ階層に用意してください。");
             }
             else
             {
@@ -195,7 +195,7 @@ namespace PPD
                 }
             }
 
-            ST_Pop.ED_Error("親にコンポーネントホルダーが見つかりませんでした。\n親階層か自分と同じ階層に用意してください。");
+            EX_Pop.ED_Error("親にコンポーネントホルダーが見つかりませんでした。\n親階層か自分と同じ階層に用意してください。");
             return false;
         }
 #endif

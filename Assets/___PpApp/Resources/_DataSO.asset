@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4a68201514b4f54698131234be6c7b7, type: 3}
+  m_Name: _DataSO
+  m_EditorClassIdentifier: 
+  nextSceneLoadHandler_shakeSec: 0.5
+  nextSceneLoadHandler_fadeoutSec: 0.15
+  nextSceneLoadHandler_fadeinSec: 0.4
+  nextSceneLoadHandler_defaultColor: {r: 0, g: 0, b: 0, a: 0}
+  nextSceneLoadHandler_peakColor: {r: 0, g: 0, b: 0, a: 1}
+  fingerRange: 0.285
+  sensivityOnEditor: 0.8
+  activeTimescaleChanger: 1
+  timescale_R: 2
+  timescale_C: 3
+  characterWalkSpeed: 4
+  characterAdjRotParameter: 11
+  dropId_error: {fileID: 11400000, guid: 295888ae80efbf64ab5799bdde50c1d7, type: 2}
+  dropIdList:
+    dropIdArray:
+    - {fileID: 11400000, guid: 693f891498e380d48998bd35ce0d325a, type: 2}
+    - {fileID: 11400000, guid: ff01bbd228e0c88459b6024ec6d6bc64, type: 2}
+    - {fileID: 11400000, guid: ad071e62d80d80e498163ab80a7af8f1, type: 2}
+    - {fileID: 11400000, guid: a074f3831e2439c4c986af7fb0ace543, type: 2}
+    - {fileID: 11400000, guid: 2f5640643dc3cb546812637328000f0f, type: 2}
+    - {fileID: 11400000, guid: 629e1bca42d03df44ad6d85fd3aaa641, type: 2}
+    - {fileID: 11400000, guid: 6c7f2f30a68428d4b97363a2987f96d9, type: 2}
+    - {fileID: 11400000, guid: 1ab9cb80a47ccd640b8f7f3b78600a52, type: 2}
+  characterNumber: 3
+  pfMass: {fileID: -3987685071927210099, guid: 3079bd43f430e6548bdf98ebb8c207bd, type: 3}

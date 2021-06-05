@@ -9,6 +9,7 @@ namespace SR
 {
     public static class ED_ExButton
     {
+        #if UNITY_EDITOR
         [MenuItem("CONTEXT/Button/★ODButtonに変換する")]
         private static void Rename(MenuCommand menuCommand)
         {
@@ -35,5 +36,6 @@ namespace SR
             var button = menuCommand.context as Button;
             button.gameObject.AddComponent<PointerSound>();
         }
+        #endif
     }
 }

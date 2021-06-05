@@ -350,10 +350,10 @@ namespace PPD
             return ret;
         }
 
-        public static T RemoveTail<T>(this ICollection<T> ie)
+        public static T RemoveTail<T>(this IList<T> ie)
         {
             var ret = ie.Last();
-            ie.Remove(ret);
+            ie.RemoveAt(ie.Count - 1);
             return ret;
         }
 

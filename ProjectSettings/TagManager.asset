@@ -40,12 +40,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background
-    uniqueID: 376551841
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Foreground
-    uniqueID: 1093302513
+  - name: Speech
+    uniqueID: 1808564295
     locked: 0

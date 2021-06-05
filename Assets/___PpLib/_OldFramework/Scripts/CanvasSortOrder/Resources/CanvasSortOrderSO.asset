@@ -12,11 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03de7583992c7b843a45658c20b027ce, type: 3}
   m_Name: CanvasSortOrderSO
   m_EditorClassIdentifier: 
-  listMinus:
-  - sortOrder: -10010
-    name: Backgroud
-    id: 1132564326
-  listPlus:
-  - sortOrder: 10000
-    name: Foreground
-    id: 1394950142
+  listMinus: []
+  listPlus: []
