@@ -1,28 +1,42 @@
 using System;
+using UnityEngine;
 
 namespace PPD
 {
     public class PD_PhaseManager : SingletonMonoBehaviour<PD_PhaseManager>
     {
-        internal PD_Phase current;
+        internal PD_Phase current { get; private set; }
         protected override void UnityAwake()
         {
         }
 
-        internal void OnPhaseEnable(PD_Phase phase)
+        private void Start()
         {
-            if (current != null)
+            var firstPhase = GetComponentInChildren<PD_Phase>();
+            if (firstPhase != null)
             {
-                current.SetActive(false);
+                firstPhase.SetCurrent();
             }
-            current = phase;
         }
 
-        internal void OnPhaseDisable(PD_Phase phase)
+        internal void SetCurrent(PD_Phase phase)
+        {
+            var prev = current;
+            current = phase;
+            if (prev != null)
+            {
+                prev.OnUncurrent();
+            }
+            current.OnCurrent();
+        }
+
+        internal void SetUncurrent(PD_Phase phase)
         {
             if (current = phase)
             {
+                var prev = current;
                 current = null;
+                prev.OnUncurrent();
             }
         }
     }

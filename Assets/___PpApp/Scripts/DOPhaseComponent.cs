@@ -1,23 +1,22 @@
+using System;
+
 namespace PPD
 {
     public abstract class DOPhaseComponent : PPD_MonoBehaviour
     {
-        internal bool ignoreOnEnable;
-        public abstract void EditorTransition();
-        public abstract void OnUnityEnable();
-        public abstract void OnUnityDisable();
+        public abstract void Init();
+        public abstract void FlashMove();
+        public abstract void DOStart();
+        public abstract void DOKill();
 
-        private void OnEnable()
-        {
-            if (!ignoreOnEnable)
-            {
-                OnUnityEnable();
-            }
-        }
+        /// <summary>
+        /// prev.OnUncurrent() -> next.OnCurrent()
+        /// </summary>
+        internal void OnPhaseCurrent() => DOStart();
 
-        private void OnDisable()
-        {
-            OnUnityDisable();
-        }
+        /// <summary>
+        /// prev.OnUncurrent() -> next.OnCurrent()
+        /// </summary>
+        internal void OnPhaseUncurrent() => DOKill();
     }
 }

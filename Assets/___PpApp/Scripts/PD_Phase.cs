@@ -1,32 +1,63 @@
-﻿using Sirenix.OdinInspector;
+﻿using System;
+using System.Collections.Generic;
+using Sirenix.OdinInspector;
+using UnityEngine;
 
 namespace PPD
 {
+    [TypeInfoBox("直下のアクティブな子しか取得しないので注意")]
     public class PD_Phase : PPD_MonoBehaviour
     {
+        bool inited;
+        List<DOPhaseComponent> doPhaseComponents;
 
-        [Button(ButtonSizes.Large), GUIColor(1, 1, .5f, 1)]
-        public void EditorMove()
+        private void Init()
         {
-            foreach (var doMoveHere in GetComponentsInChildren<DOPhaseComponent>())
+            inited = true;
+            doPhaseComponents = GetComponentsInChildrenJustBelow<DOPhaseComponent>();
+
+            foreach (var d in this.doPhaseComponents)
             {
-                doMoveHere.EditorTransition();
+                d.Init();
             }
         }
 
-        [Button(ButtonSizes.Gigantic), GUIColor(.5f, .5f, 1, 1)]
-        public void SetActive()
+        [Button(ButtonSizes.Large), GUIColor(1, 1, .5f, 1)]
+        public void FlashMove()
         {
-            this.gameObject.SetActive(true);
+            GetComponentsInChildrenJustBelow<DOPhaseComponent>().ForEach(d => d.FlashMove());
         }
 
-        private void OnEnable()
+        [Button(ButtonSizes.Gigantic), GUIColor(1, .5f, 1, 1)]
+        public void SetCurrent() => PD_PhaseManager.Ins.SetCurrent(this);
+
+        [Button(ButtonSizes.Large), GUIColor(.5f, 1, 1, 1)]
+        public void SetUncurrent() => PD_PhaseManager.Ins.SetUncurrent(this);
+
+        /// <summary>
+        /// prev.OnUncurrent() -> next.OnCurrent()
+        /// </summary>
+        public void OnUncurrent()
         {
-            PD_PhaseManager.Ins.OnPhaseEnable(this);
+            this.gameObject.SetActive(false);
+            foreach (var d in doPhaseComponents)
+            {
+                d.OnPhaseUncurrent();
+            }
         }
-        private void OnDisable()
+
+        /// <summary>
+        /// prev.OnUncurrent() -> next.OnCurrent()
+        /// </summary>
+        public void OnCurrent()
         {
-            PD_PhaseManager.Ins.OnPhaseDisable(this);
+            if (!inited) Init();
+
+            this.gameObject.SetActive(true);
+            foreach (var d in doPhaseComponents)
+            {
+                d.OnPhaseCurrent();
+            }
         }
     }
 }

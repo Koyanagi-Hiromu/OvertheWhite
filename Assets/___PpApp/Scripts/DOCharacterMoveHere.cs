@@ -1,4 +1,6 @@
-﻿using DG.Tweening;
+﻿using System.Diagnostics;
+using DG.Tweening;
+using Sirenix.OdinInspector;
 
 namespace PPD
 {
@@ -7,14 +9,25 @@ namespace PPD
         public Character character;
         public float moveDuration;
 
-        public override void EditorTransition()
+        public override void Init() { }
+
+        [Conditional("DEVELOPMENT_BUILD"), Conditional("UNITY_EDITOR")]
+        [Button(ButtonSizes.Gigantic)]
+        public void EDITOR_ResetTransform()
         {
-            character.transform.position = transform.position;
+            UnityEditor.Undo.RecordObject(transform, "ResetTransform");
+            transform.position = character.transform.position;
         }
 
-        public override void OnUnityDisable() { }
+        public override void FlashMove()
+        {
+            character.transform.position = transform.position;
+            character.billBoard.LookInInspector();
+        }
 
-        public override void OnUnityEnable()
+        public override void DOKill() { }
+
+        public override void DOStart()
         {
             character.transform.DOMove(transform.position, moveDuration);
         }

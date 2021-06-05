@@ -19,7 +19,7 @@ namespace SR
         }
 
         [Button]
-        private void LookInInspector()
+        public void LookInInspector()
         {
             Init();
             LookAtMainCamera();

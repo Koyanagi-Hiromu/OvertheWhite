@@ -14,9 +14,13 @@ namespace PPD
         public float fadeDuration = 0.2f;
         public float shakeStrength;
         public float shakeDuration;
-        public TextMeshPro textMesh => character.speechBabble.textMesh;
+
         DOTweenTMPAnimator animator;
-        public override void EditorTransition()
+        public TextMeshPro textMesh => character.speechBabble.textMesh;
+
+        public override void Init() { }
+
+        public override void FlashMove()
         {
             textMesh.text = text;
             textMesh.color = color;
@@ -27,18 +31,13 @@ namespace PPD
             animator = new DOTweenTMPAnimator(textMesh);
         }
 
-        public override void OnUnityDisable()
+        public override void DOKill()
         {
             animator.Dispose();
-
-            character.speechBabble.babbleImage.DOKill();
-            character.speechBabble.textMesh.DOKill();
-
-            character.speechBabble.babbleImage.DOColor(Color.clear, 0.2f);
-            character.speechBabble.textMesh.DOColor(Color.clear, 0.2f);
+            character.speechBabble.DOClear();
         }
 
-        public override void OnUnityEnable()
+        public override void DOStart()
         {
             character.speechBabble.babbleImage.DOKill();
             character.speechBabble.textMesh.DOKill();
