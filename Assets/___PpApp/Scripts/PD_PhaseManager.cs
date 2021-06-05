@@ -9,13 +9,21 @@ namespace PPD
         {
         }
 
-        internal void OnPhaseEnable(PD_Phase pD_PhaseTransition)
+        internal void OnPhaseEnable(PD_Phase phase)
         {
             if (current != null)
             {
                 current.SetActive(false);
             }
-            current = pD_PhaseTransition;
+            current = phase;
+        }
+
+        internal void OnPhaseDisable(PD_Phase phase)
+        {
+            if (current = phase)
+            {
+                current = null;
+            }
         }
     }
 }

@@ -9,6 +9,7 @@ namespace PPD
         [TextArea] public string text;
         public Character character;
         public Color color = Color.white;
+        [Min(0)] public int delayCountFor1stChar = 2;
         public float eachDelay = 0.1f;
         public float fadeDuration = 0.2f;
         public float shakeStrength;
@@ -23,20 +24,13 @@ namespace PPD
 
         private void Awake()
         {
-            if (animator == null)
-            {
-                animator = new DOTweenTMPAnimator(textMesh);
-            }
+            animator = new DOTweenTMPAnimator(textMesh);
         }
 
         public override void OnUnityDisable()
         {
-            //TODO: 遷移途中で止められていないので止められるようにしてね
+            animator.Dispose();
 
-            // if (animator != null)
-            // {
-            //     animator.Reset();
-            // }
             character.speechBabble.babbleImage.DOKill();
             character.speechBabble.textMesh.DOKill();
 
@@ -56,12 +50,12 @@ namespace PPD
             clearColor.a = 0;
             textMesh.color = clearColor;
 
-
+            animator.Refresh();
             if (shakeStrength > 0 && shakeDuration > 0)
             {
                 for (int i = 0; i < animator.textInfo.characterCount; i++)
                 {
-                    animator.DOFadeChar(i, 1, fadeDuration).SetDelay(i * eachDelay);
+                    animator.DOFadeChar(i, 1, fadeDuration).SetDelay((i + delayCountFor1stChar) * eachDelay);
                     animator.DOShakeCharOffset(i, shakeDuration, shakeStrength, fadeOut: false).SetEase(Ease.Linear).SetLoops(-1);
                 }
             }
@@ -69,7 +63,7 @@ namespace PPD
             {
                 for (int i = 0; i < animator.textInfo.characterCount; i++)
                 {
-                    animator.DOFadeChar(i, 1, fadeDuration).SetDelay(i * eachDelay);
+                    animator.DOFadeChar(i, 1, fadeDuration).SetDelay((i + delayCountFor1stChar) * eachDelay);
                 }
             }
         }
