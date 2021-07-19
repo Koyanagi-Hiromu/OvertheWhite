@@ -8,6 +8,7 @@ namespace PPD
         public Billboard billBoard;
         public Character_SpriteRenderer spriteRenderer;
         public SpeechBabble speechBabble;
+        public SpriteRenderer shadow;
     }
 
     [RequireComponent(typeof(Character))]

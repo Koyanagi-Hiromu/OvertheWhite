@@ -1,4 +1,5 @@
 using Sirenix.OdinInspector;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,8 +9,7 @@ namespace PPD
     public class Hero : SingletonMonoBehaviour<Hero>
     {
         protected override void UnityAwake()
-        {
-        }
+        { }
     }
 }
 
